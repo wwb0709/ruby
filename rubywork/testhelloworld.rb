@@ -1,0 +1,1 @@
+print "hellowdddddsfdfdf你好dddorld"
