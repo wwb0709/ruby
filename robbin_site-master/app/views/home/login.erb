@@ -1,0 +1,22 @@
+<div class="login">
+<% form_for @account, url(:login) do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :email, :caption => "Email地址" %>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.label :password, :caption => "输入密码" %>
+    <%= f.password_field :password %>
+  </p>
+  <p class="remember_me" >
+    <%= check_box_tag :remember_me, :checked => true %>
+    <%= label_tag :remember_me, :caption => "两周内自动登录" %>
+  </p>
+  <p>
+    <%= f.submit '', :class => 'login' %>
+    <%= link_to '', url(:weibo_login), :class => 'sina_btn' %>
+  </p>
+<% end %>
+</div>
+

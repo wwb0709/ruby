@@ -1,0 +1,23 @@
+<% @nav = 'tag' %>
+<% @title = '文章分类' %>
+<% @description = '全站文章所有文章分类的列表' %>
+
+<div class="left">
+  <h3>文章分类</h3>
+  <div class="con">
+  	<div class="tag_list">
+  		<ul class="clearfix">
+        <% Blog.cached_tag_cloud.each do |tag| %>
+        <li>
+          <%= link_to "<span>#{tag.name}</span>".html_safe, url(:blog, :tag, :name => tag.name), :class => 'tag' %>
+          X <span><%= tag.count %></span>
+        </li>
+        <% end %>
+      </ul>
+  	</div>
+  </div>
+</div><!-- left content -->
+
+<div class="right">
+  <%= partial 'blog/right' %>
+</div><!-- right content -->

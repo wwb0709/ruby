@@ -1,0 +1,7 @@
+<script type="text/javascript">
+  window.opener.$('div.box').hide();
+  window.opener.$('div.header div.write').html('<%= @account.name %><%= js_escape_html(button_to("退出", url(:logout), :method => :delete)).html_safe %>');
+  window.close();
+  window.opener.$('div#comment-error-info').html('成功登录').show().fadeOut(3000);
+  window.opener.$('#blog_comment_content').focus();
+</script>
