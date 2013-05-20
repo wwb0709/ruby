@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @myblog.name %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @myblog.title %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @myblog.content %>
+</p>
+
+<p>
+  <b>Content:</b>
+  <%= @myblog.content %>
+</p>
+<p>
+  <b>File:</b>
+  <%= @myblog.myfile %>
+  <br/>
+  <img src="/upload/<%= @myblog.myfile %>" width="50" height="50">
+</p>
+
+<p>
+  <b>Tags:</b>
+  <%= join_tags(@myblog) %>
+</p>
+
+<h2>Comments</h2>
+<%= render @myblog.comments %>
+
+<h2>Add a comment:</h2>
+
+<%= render "comments/form" %>
+ 
+<%= link_to 'Edit', edit_myblog_path(@myblog) %> |
+<%= link_to 'Back', myblogs_path %>

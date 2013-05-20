@@ -1,0 +1,17 @@
+<h3>最新评论</h3>
+<ul class="comment">
+<li>
+  <div>Commenter:</div>
+  <%= comment.commenter %>
+</li>
+ 
+<li>
+  <b>Comment:</b>
+  <%= comment.body %>
+</li>
+<li>
+  <%= link_to 'Destroy Comment', [comment.myblog,comment],
+               :confirm => 'Are you sure?',
+               :method => :delete %>
+</li>
+</ul>

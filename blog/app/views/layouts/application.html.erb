@@ -1,0 +1,64 @@
+</html><html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title><%= @title ? "#{@title} - #{APP_CONFIG['site_title']}": APP_CONFIG['site_title'] %></title>
+    <meta name="description" content="<%= @description || APP_CONFIG['site_description'] %>">
+    <meta name="author" content="Robbin Fan">
+    <link href="/rss" rel="alternate" title="<%= APP_CONFIG['site_title'] %>" type="application/rss+xml" />
+
+    <%= stylesheet_link_tag '/skins/default/document', '/skins/default/content' %>
+
+  </head>
+  <body>
+      <div id="flash-notice"></div>
+      <div class="header">
+        <div class="wrap">
+        	<div class="user_img"><img src="/skins/data/100.png" width="80" height="80" alt="website icon"></div>
+      
+	        <div class="blog_title"><%= APP_CONFIG['site_title'] %></div>
+	        <div class="write">
+	      
+	        </div>
+	        <div class="blog_motto"><%= APP_CONFIG['site_motto'] %></div>
+        
+   
+        </div>
+      </div><!-- header -->
+    
+      <div class="nav">
+        <div class="wrap clearfix">
+      
+          <ul>
+            <li><a href="/" <%= "class='current'".html_safe if @nav == 'home' %>>首页</a></li>
+            <li><a href="/blog" <%= "class='current'".html_safe if @nav == 'blog' %>>2</a></li>
+            <li><a href="/note" <%= "class='current'".html_safe if @nav == 'note' %>>3</a></li>
+            <li><a href="/tag" <%= "class='current'".html_safe if @nav == 'tag' %>>4</a></li>
+            <li><a href="/weibo" <%= "class='current'".html_safe if @nav == 'weibo' %>>5</a></li>
+       
+          </ul>
+        </div>  
+     </div><!-- nav -->
+	<div class="wrap clearfix">
+	 <%= yield %>
+	
+	</div><!-- content -->
+
+
+	<div class="footer">
+	  	<a href="http://weibo.com/u/2080582921" class="weibo">Weibo</a>
+	    <a href="https://github.com/wwb0709" class="github">Github</a>      
+	    <a href="mailto:wwb1111@163.com" class="mail">Email</a>
+
+	    <div class="powered-by">
+	      <a href="" title="wwb">Powered by wwb</a>
+	    </div>
+	  </div><!-- footer -->
+	  <%= javascript_include_tag 'jquery', 'jquery-ujs', 'application' %>
+
+	  <% if flash[:notice] %>
+	    <script type="text/javascript">
+	      $('div#flash-notice').html('<%= flash[:notice] %>').show().fadeOut(3000);
+	    </script>
+		  <% end %>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+# development: &default
+  session_secret: '86ecbc1271461d8a8c074ec7827b68139ca807a04faab7f396d0012861982321'
+  site_url: 'http://localhost:3000'
+  site_title: 'wwb的自言自语'
+  site_motto: 'Small is beautiful, constraint is liberty.'
+  site_description: 'wwb个人网站，发表个人原创的博客文章和学习笔记，包括互联网产品，研发和运营类的文章'
+  show_certification: true
+  show_me_url: 'http://127.0.0.1:3000/blog/1'
+  blog_search_ping: false
+  google_cse: '007540752216561218107:cgbwg20yn_o'
+  weibo_api_key: '1234567890'
+  weibo_api_secret: '1234567890'
+  weibo_redirect_uri: 'http://localhost:3000/weibo_callback'
+  weibo_uid: '2080582921'
+  weibo_uid_verifier: ''
+  
+# test: 
+#   <<: *default
+# 
+# production:
+#   <<: *default
+#   site_url: 'http://robbinfan.com'
+#   blog_search_ping: true

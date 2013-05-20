@@ -1,0 +1,29 @@
+<div class="publish">
+	<div class="con">
+<table class="admin">
+  <tr>
+    <td width="70">名称</td>
+    <td width="100">标题</td>
+    <td >内容</td>
+    <td width="70">操作</td>
+
+  </tr>
+
+<% @myblogs.each do |myblog| %>
+  <tr>
+    <td><%= myblog.name %></td>
+    <td><%= myblog.title %></td>
+    <td class="text"><%= myblog.content %></td>
+ 
+    <td><%= link_to '预 览', myblog %><br/> <%= link_to '编 辑', edit_myblog_path(myblog) %><br/> <%= link_to '删 除', myblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+  </tr>
+<% end %>
+</table>
+
+
+  </div>
+  
+
+</div>
+<%= link_to 'New Myblog', new_myblog_path %>

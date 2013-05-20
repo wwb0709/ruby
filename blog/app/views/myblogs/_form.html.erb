@@ -1,0 +1,43 @@
+<% @myblog.tags.build %>
+
+<div class="publish">
+	<div class="con">
+<%= form_for(@myblog,:html =>{:multipart => true})  do |myblog_form| %>
+  <% if @myblog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@myblog.errors.count, "error") %> prohibited this myblog from being saved:</h2>
+
+      <ul>
+      <% @myblog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    用户名字<br />
+    <%= myblog_form.text_field :name, :class => 'name' %>
+  </div>
+  <div class="field">
+    标题<br />
+    <%= myblog_form.text_field :title, :class => 'title' %>
+  </div>
+  <div class="field">
+    内容<br />
+    <%= myblog_form.text_area :content, :class => 'content' %>
+  </div>
+  <div class="field">
+    图片<br />
+    <%= myblog_form.file_field :myfile, :class => 'myfile' %>
+  </div>
+ 
+  <h2>标签</h2>
+  <%= render :partial => 'tags/form',
+             :locals => {:form => myblog_form} %>
+			 <br/>
+  <%= submit_tag '提交' %>  
+<% end %>
+
+  </div>
+</div>
