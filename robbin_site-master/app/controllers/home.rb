@@ -5,7 +5,16 @@ RobbinSite.controllers do
   before :login, :weibo_login do
     redirect url(:index) if account_login?
   end
-  
+  get :products do
+   
+      # 'hello world' + params[:hello]
+      @post = Post.new
+      @post.name = 'wwbsssssssss'
+      @post.body = 'wwb'
+      @post.save
+       'hello world' + params[:hello]
+    # redirect url(:index)
+  end
   get :index do
     @blogs = Blog.order('id DESC').page(params[:page])
     render 'home/index'

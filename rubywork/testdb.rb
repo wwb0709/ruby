@@ -1,11 +1,13 @@
 # gem "rails"
+# encoding: utf-8
 require 'mysql'  
 begin  
   dbh=Mysql.real_connect("localhost","root","123456","userinfo",3306)  
+  dbh.query("set names 'utf8'")
   dbh.query("drop table if exists test_rb")  
   dbh.query("create table test_rb(id int,name varchar(20))")  
-  dbh.query("insert into test_rb values(1,'ss')")  
-  dbh.query("insert into test_rb values(1,'aaa')")  
+  dbh.query("insert into test_rb (name) values('哈哈')")  
+
   printf "%d rows were inserted\n",dbh.affected_rows  
     
   res=dbh.query("SELECT name FROM test_rb")  

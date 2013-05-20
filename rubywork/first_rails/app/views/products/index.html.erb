@@ -1,5 +1,5 @@
 <h1>Listing products</h1>
-
+<%= render 'form' %>
 <table>
   <tr>
     <th>Title</th>
@@ -13,6 +13,7 @@
   </tr>
 
 <% @products.each do |product| %>
+
   <tr>
     <td><%= product.title %></td>
     <td><%= product.description %></td>

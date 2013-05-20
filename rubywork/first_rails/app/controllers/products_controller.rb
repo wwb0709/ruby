@@ -2,8 +2,10 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
+    # render :json => Product.all
 
+    @products = Product.all
+    @product = Product.last
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @products }
@@ -19,6 +21,8 @@ class ProductsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @product }
     end
+    
+
   end
 
   # GET /products/new
