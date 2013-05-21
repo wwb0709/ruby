@@ -1,5 +1,17 @@
+
 <div class="publish">
 	<div class="con">
+		<div>
+			<%= will_paginate @myblogs,
+			:inner_window => 1,
+			:outer_window => 1,
+			:previous_label => '<',
+			:next_label => '>'
+			%>
+		</div>
+		<div>
+	
+		</div>
 <table class="admin">
   <tr>
     <td width="70">名称</td>
@@ -26,4 +38,5 @@
   
 
 </div>
+
 <%= link_to 'New Myblog', new_myblog_path %>

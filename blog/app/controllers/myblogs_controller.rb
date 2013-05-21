@@ -6,8 +6,8 @@ class MyblogsController < ApplicationController
   # GET /myblogs
   # GET /myblogs.json
   def index
-    @myblogs = Myblog.all
-    
+    # @myblogs = Myblog.all
+     @myblogs = Myblog.paginate :page => params[:page],:per_page => 1 
  #     @pages, @myblogs = paginate_collection(@myblogs, :page => params[:page])  
 #       
 # Article.find(:all,:order=>'id desc').paginate :page=>params[:page]||1,:per_page=>3
