@@ -179,7 +179,7 @@ end
 before= Time.now
 
 #IP数据文件路径
-ip='202.38.64.10'
+ip='124.207.84.210'
 p IpLocationSeeker.new.seek(ip)
 
 
